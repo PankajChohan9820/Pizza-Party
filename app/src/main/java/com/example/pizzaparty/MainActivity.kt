@@ -9,7 +9,12 @@ import androidx.appcompat.app.AppCompatActivity
 import kotlin.math.ceil
 
 const val SLICES_PER_PIZZA = 8
-
+/**
+ *
+ * This is the main class that interacts with the UI
+ *
+ * @onCreate this is responsible for initialization of activity.
+ */
 class MainActivity : AppCompatActivity() {
 
     private lateinit var numAttendEditText: EditText
@@ -19,11 +24,17 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Get id's of all the View
         numAttendEditText = findViewById(R.id.num_attend_edit_text)
         numPizzasTextView = findViewById(R.id.num_pizzas_text_view)
         howHungryRadioGroup = findViewById(R.id.hungry_radio_group)
     }
 
+    /**
+     * Calculate the number of pizza's required for the given number of people
+     * @return total number of pizza's.
+     */
     fun calculateClick(view: View) {
 
         // Get the text that was typed into the EditText
